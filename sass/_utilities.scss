@@ -1,0 +1,97 @@
+@forward "./config";
+
+@mixin circleMaker($color) {
+  background-color: $color;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  margin: $standard * 1.2;
+  color: $success;
+}
+
+@mixin flex($add) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @if ($add == "col") {
+    flex-direction: column;
+  }
+
+  @if ($add == "even") {
+    justify-content: space-between;
+  }
+}
+
+@mixin capsbold($font) {
+  font-size: $font;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+// default value that the padding is normal
+@mixin button($pad: $normal, $bg: map-get($colors, "purple"), $clr: white) {
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  padding: calc($pad / 2) $pad;
+  background-color: $bg;
+  color: $clr;
+}
+
+@mixin link($font, $padding) {
+  @include capsbold($font);
+  letter-spacing: calc(0.15rem + 0.15vw);
+  border-bottom: solid calc(0.12rem + 0.01vw) black;
+  padding-bottom: $padding;
+}
+
+@function light-comp($color) {
+  $complement: complement($color);
+  $light-complement: lighten($complement, 30%);
+  @return $light-complement;
+}
+
+// @mixin breakpoint($bp: 0) {
+//   @media (min-width: $bp) {
+//     @content;
+//   }
+// }
+
+$breakpoints: (
+  "xs": 0,
+  "sm": 480px,
+  "md": 720px,
+  "lg": 960px,
+  "xl": 1200px,
+);
+
+@mixin xs {
+  @media (min-width: map-get($breakpoints, "xs")) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: map-get($breakpoints, "sm")) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: map-get($breakpoints, "md")) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: map-get($breakpoints, "lg")) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: map-get($breakpoints, "xl")) {
+    @content;
+  }
+}

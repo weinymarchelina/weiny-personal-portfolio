@@ -1,0 +1,226 @@
+@use "../sass/index" as *;
+
+.container {
+  @include flex("col");
+  align-items: flex-start;
+  padding: $paddingMain;
+  width: 100%;
+
+  h3 {
+    font-size: $text50;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: $letter10;
+  }
+}
+
+.one {
+  @include flex("even");
+  width: 100%;
+
+  .headline {
+    flex: 1;
+    margin-right: calc($paddingMain / 2);
+
+    h2 {
+      @include capsbold(calc($text50 + 30%));
+      letter-spacing: $letter5;
+      margin-bottom: $padding10;
+    }
+
+    p {
+      font-size: $text30;
+      line-height: 135%;
+      //   margin-bottom: $padding30;
+      letter-spacing: $letter5;
+      padding-bottom: $padding50;
+      border-bottom: calc($padding10 / 5) solid $colorMain;
+    }
+  }
+
+  .cta {
+    text-align: end;
+    flex: 2;
+
+    p {
+      letter-spacing: $letter10;
+      font-size: $text20;
+      margin-bottom: $padding80;
+    }
+
+    a {
+      @include link($text20, $padding10);
+      margin-left: $padding30;
+    }
+  }
+}
+
+.two {
+  @include flex("even");
+  width: 100%;
+  align-items: flex-start;
+
+  h3 {
+    font-size: $text25;
+    letter-spacing: $letter5;
+    margin-bottom: $padding20;
+  }
+
+  .content {
+    margin-left: calc($paddingMain / 2);
+    flex: 5;
+    background-color: black;
+    border: solid $padding10 black;
+    border-radius: $padding10;
+
+    img {
+      display: block;
+      width: 100%;
+
+      //   border: solid $padding10 black;
+    }
+  }
+}
+
+.info {
+  flex: 1;
+  margin-right: $paddingMain;
+
+  .tech {
+    @include flex("col");
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: $padding50;
+    margin-bottom: $padding50;
+
+    ul {
+      @include flex("");
+
+      li {
+        @include flex("col");
+        img {
+          height: $width75;
+          width: $width100;
+          margin-bottom: $padding15;
+          object-fit: contain;
+        }
+
+        p {
+          display: block;
+          font-size: $text20;
+        }
+      }
+
+      li + li {
+        margin-left: $padding80;
+      }
+    }
+  }
+
+  .category {
+    ul {
+      li {
+        background-color: #aaaaaa;
+        padding: calc($padding10 / 1.5);
+        display: inline-block;
+        font-size: $text20;
+        letter-spacing: $letter5;
+        margin-right: $padding15;
+        margin-bottom: $padding10;
+      }
+    }
+  }
+}
+
+.desc {
+  @include flex("even");
+  align-items: flex-start;
+  padding: calc($paddingMain * 2) 0;
+  .header {
+    flex: 1.5;
+  }
+  div {
+    margin-left: calc($paddingMain / 2);
+    flex: 2;
+    font-size: $text25;
+    line-height: 150%;
+    letter-spacing: $letter5;
+  }
+}
+
+.content {
+  flex: 2;
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+}
+
+.sample {
+  img {
+    width: calc(100vw - calc($paddingMain * 4));
+  }
+}
+
+.other {
+  margin: calc($paddingMain * 2) $paddingMain 0;
+
+  .project {
+    ul {
+      @include flex("");
+      margin-top: $padding50;
+
+      li {
+        flex: 1;
+        align-self: flex-start;
+
+        .containImg {
+          //   height: $width200;
+          button {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding: $padding20;
+            margin: $padding20;
+            text-transform: uppercase;
+            letter-spacing: $letter5;
+            @include capsbold($text16);
+          }
+
+          img {
+            width: 100%;
+            object-fit: contain;
+            display: block;
+          }
+        }
+
+        .containInfo {
+          @include flex("col");
+          justify-content: flex-start;
+          align-items: flex-start;
+          background-color: #aaaaaa;
+          padding: $padding30;
+          // color: white;
+          height: calc($width200 * 1.25);
+
+          p {
+            font-size: $text22;
+            line-height: 150%;
+          }
+
+          p:nth-child(1) {
+            font-size: $text30;
+            text-transform: uppercase;
+            letter-spacing: $letter5;
+            margin-bottom: $padding15;
+          }
+        }
+      }
+
+      li + li {
+        margin-left: calc($paddingMain / 2);
+      }
+    }
+  }
+}

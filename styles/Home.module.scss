@@ -1,0 +1,171 @@
+@use "../sass/index" as *;
+
+.mainContainer {
+  position: relative;
+}
+
+.bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $padding50;
+  //   height: 100vh;
+  //   position: sticky;
+
+  button {
+    height: $padding30;
+    width: $padding30;
+    background-color: #cccccc;
+    transition: 250ms ease;
+
+    &:hover {
+      width: $padding50;
+    }
+  }
+
+  div + div {
+    margin-top: $padding35;
+  }
+}
+
+.pages {
+  @include flex("even");
+  min-height: calc(100vh - calc($paddingMain * 2));
+  background-color: #eeeeee;
+  padding: $paddingMain;
+
+  .setContainer {
+    @include flex("");
+    width: 100%;
+    align-items: stretch;
+    // height: fit-content;
+  }
+
+  .one {
+    @include flex("col");
+    // height: 100rem;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex: 3.5;
+
+    .headline {
+      h2 {
+        @include capsbold(calc($text50 + 30%));
+        letter-spacing: $letter5;
+        margin-bottom: $padding10;
+      }
+
+      p {
+        font-size: $text30;
+        line-height: 135%;
+        margin-bottom: $padding30;
+        letter-spacing: $letter5;
+      }
+
+      .cta {
+        a {
+          @include link($text20, $padding10);
+        }
+
+        a + a {
+          margin-left: $padding50;
+        }
+        margin-bottom: $padding80;
+      }
+    }
+
+    .tech {
+      @include flex("");
+      justify-content: flex-start;
+
+      li {
+        @include flex("col");
+        img {
+          height: $width75;
+          width: $width100;
+          margin-bottom: $padding15;
+          object-fit: contain;
+        }
+
+        p {
+          display: block;
+          font-size: $text20;
+        }
+      }
+
+      li + li {
+        margin-left: $padding80;
+      }
+    }
+  }
+
+  .two {
+    margin-left: calc($paddingMain / 2);
+    flex: 5;
+    background-color: black;
+    border: solid $padding10 black;
+    border-radius: $padding10;
+
+    img {
+      display: block;
+      width: 100%;
+
+      //   border: solid $padding10 black;
+    }
+  }
+}
+
+.skillContainer {
+  h2 {
+    @include capsbold(calc($text82));
+    letter-spacing: $letter5;
+    margin-bottom: $padding10;
+  }
+
+  .show {
+    @include flex("col");
+    align-items: flex-start;
+    // align-items: stretch;
+
+    .category {
+      @include flex("col");
+      align-items: flex-start;
+
+      h3 {
+        font-weight: 500;
+        font-size: $text30;
+        text-transform: uppercase;
+        letter-spacing: $letter7;
+        margin-bottom: $padding20;
+      }
+
+      ul {
+        @include flex("even");
+        width: 100%;
+        flex-wrap: wrap;
+
+        li {
+          @include flex("col");
+          img {
+            object-fit: contain;
+            width: $width100;
+            height: $width100;
+            margin-bottom: $padding10;
+          }
+
+          p {
+            font-size: $text22;
+          }
+        }
+
+        li + li {
+          margin-left: $padding80;
+        }
+      }
+    }
+
+    .category + .category {
+      margin-top: $padding50;
+    }
+  }
+}

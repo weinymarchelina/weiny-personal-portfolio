@@ -1,0 +1,66 @@
+@use "../sass/index" as *;
+
+// #hero {
+//   @include flex("");
+
+// }
+
+section .container {
+  @include flex("even");
+  background-color: transparent;
+}
+
+.one {
+  @include flex("col");
+  width: 100%;
+  height: $width700;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.headline {
+  @include flex("col");
+  align-items: flex-start;
+  width: $width750;
+
+  h1 {
+    @include capsbold($text82);
+    line-height: 110%;
+    order: 2;
+    margin-bottom: $padding30;
+    letter-spacing: $letter5;
+  }
+
+  .name {
+    order: 1;
+    font-size: $text20;
+    text-transform: uppercase;
+    margin-bottom: $padding30;
+    letter-spacing: $letter20;
+  }
+
+  .info {
+    order: 3;
+    font-size: $text25;
+    line-height: 150%;
+    margin-bottom: $padding50;
+    letter-spacing: $letter5;
+  }
+}
+
+.cta {
+  button {
+    @include capsbold($text16);
+    padding: $padding10 $padding20;
+    letter-spacing: $letter5;
+  }
+
+  button + button {
+    margin-left: $padding25;
+  }
+}
+
+.two {
+  width: 72.75%;
+  height: $width700;
+}

@@ -1,0 +1,43 @@
+@use "../sass/index" as *;
+
+.container {
+  h2 {
+    @include capsbold($text82);
+    margin-bottom: $padding10;
+    letter-spacing: $letter5;
+  }
+
+  ul {
+    @include flex("even");
+
+    li {
+      @include flex("");
+      align-items: flex-end;
+      background-color: #cccccc;
+      // width: $width300;
+      width: 25%;
+      height: $width200;
+
+      a {
+        position: absolute;
+        font-size: $text20;
+        text-transform: uppercase;
+        letter-spacing: $letter5;
+        background-color: #aaaaaa;
+        display: grid;
+        place-items: center;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: 250ms ease;
+        border: $padding10 solid #808080;
+        padding: $padding10;
+
+        &:hover {
+          border: $padding10 solid rgb(100, 100, 100);
+          background-color: #cccccc;
+        }
+      }
+    }
+  }
+}

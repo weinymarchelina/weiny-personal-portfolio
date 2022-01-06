@@ -1,0 +1,26 @@
+@use "../sass/index" as *;
+
+.navContainer {
+  @include flex("even");
+  //   background-color: azure;
+  padding: calc($paddingMain / 2.5) $paddingMain;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+}
+
+.navLogo {
+  @include capsbold($text30);
+  font-family: "Poppins", sans-serif;
+}
+
+.navLinks {
+  @include flex("even");
+  @include capsbold($text16);
+  letter-spacing: $letter10;
+  // width: 75%;
+
+  li + li {
+    margin-left: $padding50;
+  }
+}

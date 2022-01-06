@@ -1,0 +1,36 @@
+@use "../sass/index" as *;
+
+.container {
+  @include flex("even");
+  h2 {
+    @include capsbold($text82);
+    margin-bottom: $padding10;
+    letter-spacing: $letter5;
+    flex: 1;
+  }
+
+  ul {
+    @include flex("col");
+    flex: 1;
+
+    li {
+      @include flex("");
+      justify-content: space-between;
+      width: 100%;
+
+      a {
+        @include flex("even");
+        @include link($text20, $padding10);
+        text-transform: uppercase;
+        letter-spacing: $letter10;
+        padding: $padding10;
+        width: 100%;
+        text-align: center;
+
+        p:nth-child(2) {
+          font-weight: normal;
+        }
+      }
+    }
+  }
+}
