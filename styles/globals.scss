@@ -88,3 +88,13 @@ img,
 video {
   width: 100%;
 }
+
+@include xxl {
+  .container {
+    min-height: auto;
+  }
+
+  .half {
+    min-height: auto;
+  }
+}

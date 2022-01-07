@@ -2,7 +2,6 @@
 
 .navContainer {
   @include flex("even");
-  //   background-color: azure;
   padding: calc($paddingMain / 2.5) $paddingMain;
   width: 100%;
   position: fixed;

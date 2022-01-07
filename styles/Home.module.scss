@@ -28,6 +28,13 @@
   }
 }
 
+.mainTitle {
+  @include capsbold($text82);
+  padding: $paddingMain $paddingMain calc($paddingMain / 2);
+  background-color: #eeeeee;
+  border-bottom: calc($padding10 / 2) solid black;
+}
+
 .pages {
   @include flex("even");
   min-height: calc(100vh - calc($paddingMain * 2));
@@ -38,79 +45,75 @@
     @include flex("");
     width: 100%;
     align-items: stretch;
-    // height: fit-content;
-  }
 
-  .one {
-    @include flex("col");
-    // height: 100rem;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex: 3.5;
+    .one {
+      @include flex("col");
+      align-items: flex-start;
+      justify-content: space-between;
+      flex: 3.5;
 
-    .headline {
-      h2 {
-        @include capsbold(calc($text50 + 30%));
-        letter-spacing: $letter5;
-        margin-bottom: $padding10;
-      }
-
-      p {
-        font-size: $text30;
-        line-height: 135%;
-        margin-bottom: $padding30;
-        letter-spacing: $letter5;
-      }
-
-      .cta {
-        a {
-          @include link($text20, $padding10);
-        }
-
-        a + a {
-          margin-left: $padding50;
-        }
-        margin-bottom: $padding80;
-      }
-    }
-
-    .tech {
-      @include flex("");
-      justify-content: flex-start;
-
-      li {
-        @include flex("col");
-        img {
-          height: $width75;
-          width: $width100;
-          margin-bottom: $padding15;
-          object-fit: contain;
+      .headline {
+        h3 {
+          @include capsbold(calc($text50 + 30%));
+          letter-spacing: $letter5;
+          margin-bottom: $padding10;
         }
 
         p {
-          display: block;
-          font-size: $text20;
+          font-size: $text30;
+          line-height: 135%;
+          margin-bottom: $padding30;
+          letter-spacing: $letter5;
+        }
+
+        .cta {
+          a {
+            @include link($text20, $padding10);
+          }
+
+          a + a {
+            margin-left: $padding50;
+          }
+          margin-bottom: $padding80;
         }
       }
 
-      li + li {
-        margin-left: $padding80;
+      .tech {
+        @include flex("");
+        justify-content: flex-start;
+
+        li {
+          @include flex("col");
+          img {
+            height: $width75;
+            width: $width100;
+            margin-bottom: $padding15;
+            object-fit: contain;
+          }
+
+          p {
+            display: block;
+            font-size: $text20;
+          }
+        }
+
+        li + li {
+          margin-left: $padding80;
+        }
       }
     }
-  }
 
-  .two {
-    margin-left: calc($paddingMain / 2);
-    flex: 5;
-    background-color: black;
-    border: solid $padding10 black;
-    border-radius: $padding10;
+    .two {
+      margin-left: calc($paddingMain / 2);
+      flex: 5;
+      background-color: black;
+      border: solid $padding10 black;
+      border-radius: $padding10;
 
-    img {
-      display: block;
-      width: 100%;
-
-      //   border: solid $padding10 black;
+      img {
+        display: block;
+        width: 100%;
+      }
     }
   }
 }
@@ -125,7 +128,6 @@
   .show {
     @include flex("col");
     align-items: flex-start;
-    // align-items: stretch;
 
     .category {
       @include flex("col");
@@ -143,6 +145,8 @@
         @include flex("even");
         width: 100%;
         flex-wrap: wrap;
+        gap: $padding30 $padding80;
+        justify-content: flex-start;
 
         li {
           @include flex("col");
@@ -157,15 +161,230 @@
             font-size: $text22;
           }
         }
-
-        li + li {
-          margin-left: $padding80;
-        }
       }
     }
 
     .category + .category {
       margin-top: $padding50;
     }
+  }
+}
+
+@include xxl {
+  .mainTitle {
+    padding: calc($paddingMain / 1.5) calc($paddingMain * 2)
+      calc($paddingMain / 2);
+  }
+
+  .pages {
+    @include flex("even");
+    height: auto;
+    padding-top: 0;
+
+    .setContainer {
+      @include flex("col");
+      align-items: flex-start;
+
+      .one {
+        @include flex("col");
+        order: 2;
+        padding: calc($paddingSecond * 0.5) $paddingSecond $paddingSecond;
+        align-items: flex-start;
+
+        .headline {
+          h3 {
+            @include capsbold($text70);
+          }
+
+          p {
+            font-size: $text25;
+            margin-bottom: $padding30;
+            width: 90%;
+          }
+
+          .cta {
+            a {
+              @include link($text22, $padding10);
+            }
+
+            margin-bottom: $padding80;
+          }
+        }
+
+        .tech {
+          @include flex("");
+          justify-content: flex-start;
+
+          li {
+            img {
+              width: $width75;
+            }
+
+            p {
+              font-size: $text22;
+              letter-spacing: $letter5;
+            }
+          }
+
+          li + li {
+            margin-left: $padding80;
+          }
+        }
+      }
+
+      .two {
+        order: 1;
+        margin: $paddingSecond $paddingSecond 0;
+      }
+    }
+  }
+}
+
+@include lg {
+  .mainTitle {
+    padding: calc($paddingMain / 1.5) $paddingSecond calc($paddingMain / 2);
+  }
+
+  .pages {
+    padding: $padding50 $paddingSecond 0;
+    .setContainer {
+      .one {
+        padding: calc($paddingSecond * 0.5) 0 0;
+
+        .headline {
+          h3 {
+            @include capsbold($text60);
+          }
+
+          p {
+            width: 100%;
+          }
+        }
+      }
+
+      .two {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@include md {
+  .mainTitle {
+    padding: 0;
+    border-bottom: 0;
+    background-color: transparent;
+    margin-bottom: $padding50;
+    transform: translateY(3vw);
+  }
+
+  @include md-h {
+    .mainTitle {
+      transform: translateY(8vh);
+    }
+  }
+
+  .pages {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+
+    .setContainer {
+      .one {
+        .headline {
+          h3 {
+            @include capsbold(calc($text50 - 0.5vw));
+            line-height: 110%;
+          }
+        }
+
+        .tech {
+          li {
+            img {
+              width: $width75;
+              height: calc($padding80 + 1vw);
+            }
+          }
+
+          li + li {
+            margin-left: $padding25;
+          }
+        }
+      }
+
+      .two {
+        border: solid calc($padding10 / 1.5) black;
+      }
+    }
+  }
+
+  .skillContainer {
+    padding: 0;
+    background-color: transparent;
+    h2 {
+      @include capsbold($text60);
+    }
+
+    .show {
+      .category {
+        // h3 {
+        //   font-size: $text30;
+        //   text-transform: uppercase;
+        //   letter-spacing: $letter7;
+        //   margin-bottom: $padding20;
+        // }
+
+        ul {
+          // @include flex("even");
+          // width: 100%;
+          // flex-wrap: wrap;
+          // gap: $padding30 $padding80;
+          // justify-content: flex-start;
+
+          li {
+            img {
+              object-fit: contain;
+              width: $paddingSecond;
+              height: $paddingSecond;
+              margin-bottom: $padding10;
+            }
+
+            p {
+              font-size: $text22;
+            }
+          }
+        }
+      }
+
+      .category + .category {
+        margin-top: $padding50;
+      }
+    }
+  }
+}
+
+@include sm {
+  .pages {
+    margin: 0 0 $padding20;
+
+    .setContainer {
+      .one {
+        .headline {
+          h3 {
+            @include capsbold(calc($text50 - 0.5vw));
+            line-height: 110%;
+          }
+        }
+      }
+
+      .two {
+        border: solid calc($padding10 / 1.5) black;
+      }
+    }
+  }
+
+  .pages + .pages {
+    padding: 0;
+    margin: 0 0 $padding50;
   }
 }

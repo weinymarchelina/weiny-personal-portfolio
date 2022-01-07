@@ -70,7 +70,7 @@ export default function Home({ projects, skills }) {
             </div>
           )} */}
           <div className={styles.mainContainer}>
-            {/* <h1>Projects</h1> */}
+            <h2 className={styles.mainTitle}>Projects</h2>
 
             {projects &&
               projects.map((project) => (
@@ -82,7 +82,7 @@ export default function Home({ projects, skills }) {
                   <div className={styles.setContainer}>
                     <div className={styles.one}>
                       <div className={styles.headline}>
-                        <h2>{project.fields.title}</h2>
+                        <h3>{project.fields.title}</h3>
                         <p>{project.fields.subtitle}</p>
                         <div className={styles.cta}>
                           <Link href={`/projects/${project.fields.slug}`}>

@@ -34,3 +34,19 @@
     }
   }
 }
+
+@include xl {
+  .container {
+    @include flex("col");
+    align-items: flex-start;
+    h2 {
+      @include capsbold($text50);
+      // margin-bottom: $padding10;
+      // letter-spacing: $letter5;
+      // flex: 1;
+    }
+
+    ul {
+    }
+  }
+}

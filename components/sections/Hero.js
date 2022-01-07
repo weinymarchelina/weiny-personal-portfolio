@@ -24,12 +24,16 @@ const Hero = () => {
           </div>
         </div>
         <div className={styles.two}>
-          <Image
-            src="/hero-img.png"
+          <img
+            src="https://res.cloudinary.com/tigervision/image/upload/v1641480386/portfolio/personal/About_e0rmcl.jpg"
+            alt="hero-image"
+          />
+          {/* <Image
+            src="https://res.cloudinary.com/tigervision/image/upload/v1641480386/portfolio/personal/About_e0rmcl.jpg"
             alt="hero-image"
             layout="fill"
             objectFit="cover"
-          />
+          /> */}
         </div>
       </div>
     </section>

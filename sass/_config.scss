@@ -7,6 +7,7 @@ $standard: 2rem;
 
 $colorMain: black;
 
+$paddingSecond: calc(1.75rem + 3.25vw);
 $paddingMain: calc(2rem + 4.25vw);
 $padding10: calc(0.35rem + 0.25vw);
 $padding15: calc(0.5rem + 0.35vw);
@@ -22,12 +23,15 @@ $letter7: calc(0.1rem + 0.05vw);
 $letter10: calc(0.15rem + 0.15vw);
 $letter20: calc(0.25rem + 0.25vw);
 
-$text16: calc(0.75rem + 0.25vw);
-$text20: calc(1rem + 0.25vw);
-$text22: calc(1rem + 0.35vw);
-$text25: calc(1rem + 0.5vw);
+$text16: calc(0.5rem + 0.5vw);
+$text20: calc(0.5rem + 0.65vw);
+$text22: calc(0.5rem + 0.7vw);
+$text25: calc(0.75rem + 0.75vw);
 $text30: calc(1rem + 0.75vw);
+$text35: calc(1.25rem + 1vw);
 $text50: calc(1.5rem + 1.5vw);
+$text60: calc(2rem + 1.5vw);
+$text70: calc(2.5rem + 1.75vw);
 $text82: calc(2.75rem + 2vw);
 
 $width75: calc(3rem + 1.35vw);

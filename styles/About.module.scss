@@ -2,41 +2,143 @@
 
 section .container {
   @include flex("even");
-}
-
-.one {
-  @include flex("col");
-  width: 100%;
-  height: $width700;
   align-items: flex-start;
-  justify-content: flex-start;
 
-  .text {
-    margin-bottom: $padding50;
-    h2 {
-      @include capsbold($text82);
-      margin-bottom: $padding10;
-      letter-spacing: $letter5;
+  .one {
+    @include flex("col");
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .text {
+      margin-bottom: $padding50;
+      h2 {
+        @include capsbold($text82);
+        margin-bottom: $padding10;
+        letter-spacing: $letter5;
+      }
+
+      p {
+        font-size: $text25;
+        line-height: 135%;
+        letter-spacing: $letter5;
+      }
     }
 
-    p {
-      font-size: $text25;
-      line-height: 135%;
-      letter-spacing: $letter5;
+    a {
+      @include link($text20, $padding10);
+    }
+
+    a + a {
+      margin-left: $padding50;
     }
   }
 
-  a {
-    @include link($text20, $padding10);
-  }
-
-  a + a {
-    margin-left: $padding50;
+  .two {
+    width: 100%;
+    height: $width700;
+    margin-left: $paddingMain;
   }
 }
 
-.two {
-  width: 100%;
-  height: $width700;
-  margin-left: $paddingMain;
+@include xxl {
+  section .container {
+    align-items: flex-start;
+
+    .one {
+      height: auto;
+
+      .text {
+        p {
+          line-height: 139.5%;
+        }
+      }
+
+      a {
+        @include link($text20, $padding10);
+      }
+    }
+
+    .two {
+      margin-left: $padding80;
+
+      img {
+        object-fit: cover;
+        object-position: center 30%;
+        height: $width700;
+      }
+    }
+  }
+}
+
+@include xl {
+  section .container {
+    @include flex("col");
+
+    .one {
+      margin-top: $padding50;
+      padding: 0 $paddingMain $paddingMain;
+      height: auto;
+      order: 2;
+
+      a {
+        @include link($text22, $padding10);
+      }
+    }
+
+    .two {
+      margin-left: 0;
+      padding: 0 $paddingMain;
+
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@include lg {
+  section .container {
+    .one {
+      margin-top: $padding50;
+      padding: 0 0 $paddingMain;
+      height: auto;
+      order: 2;
+
+      a {
+        @include link($text22, $padding10);
+      }
+    }
+
+    .two {
+      padding: 0 0 $paddingMain;
+    }
+  }
+}
+
+@include md {
+  section .container {
+    background-color: transparent;
+    padding: 0;
+    .one {
+      margin-top: $padding35;
+      padding: 0 0 $paddingMain;
+
+      .text {
+        h2 {
+          @include capsbold($padding50);
+          margin-bottom: $padding30;
+        }
+      }
+    }
+
+    .two {
+      padding: 0 0 $padding10;
+      height: auto;
+
+      img {
+        height: calc($width700 / 1.5);
+      }
+    }
+  }
 }

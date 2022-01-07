@@ -1,21 +1,17 @@
 @use "../sass/index" as *;
 
-// #hero {
-//   @include flex("");
-
-// }
-
-section .container {
+.container {
   @include flex("even");
+  align-items: flex-end;
   background-color: transparent;
 }
 
 .one {
   @include flex("col");
   width: 100%;
-  height: $width700;
+  margin-right: calc($paddingMain / 2.5);
+  flex: 1;
   align-items: flex-start;
-  justify-content: flex-end;
 }
 
 .headline {
@@ -51,7 +47,7 @@ section .container {
 .cta {
   button {
     @include capsbold($text16);
-    padding: $padding10 $padding20;
+    padding: $padding20 $padding30;
     letter-spacing: $letter5;
   }
 
@@ -61,6 +57,220 @@ section .container {
 }
 
 .two {
-  width: 72.75%;
-  height: $width700;
+  flex: 1;
+  margin-left: calc($paddingMain / 2.5);
+}
+
+@include xxl {
+  .two {
+    img {
+      object-fit: cover;
+      height: calc(calc($width750 / 2) + 50vh);
+      padding-top: $paddingMain;
+    }
+  }
+}
+
+// @include xl {
+//   .container {
+//     padding-bottom: calc(3.75 * $paddingMain);
+//   }
+
+//   .one {
+//     position: absolute;
+//     margin-right: 0;
+//     transform: translateY(5vw);
+//     z-index: 5;
+//     top: 0;
+//     text-align: left;
+//     padding-left: calc($paddingMain / 1.5);
+//   }
+
+//   .headline {
+//     align-items: flex-start;
+//     width: 100%;
+//     padding: 0 $paddingMain;
+
+//     h1 {
+//       margin-bottom: $padding10;
+//     }
+
+//     .info {
+//       transform: translateY(calc(48.5vw + 2.5rem));
+//       padding-right: calc($paddingMain / 1.5);
+//     }
+//   }
+
+//   .cta {
+//     transform: translateY(calc(48.5vw + 2.5rem));
+//     padding: 0 $paddingMain;
+//   }
+
+//   .two {
+//     margin: 0;
+//     padding: 0 calc($paddingMain * 1.5);
+
+//     img {
+//       height: 100%;
+//     }
+//   }
+// }
+
+@include xl {
+  .container {
+    padding-bottom: calc(3.75 * $paddingMain);
+  }
+
+  .one {
+    position: absolute;
+    margin-right: 0;
+    transform: translateY(5vw);
+    z-index: 5;
+    top: 0;
+    text-align: left;
+    padding-left: calc($paddingMain / 1.5);
+  }
+
+  .headline {
+    align-items: flex-start;
+    width: 100%;
+    padding: 0 $paddingMain;
+
+    h1 {
+      margin-bottom: $padding10;
+    }
+
+    .info {
+      transform: translateY(calc(48.5vw + 2.5rem));
+      padding-right: calc($paddingMain / 1.5);
+    }
+  }
+
+  .cta {
+    transform: translateY(calc(48.5vw + 2.5rem));
+    padding: 0 $paddingMain;
+  }
+
+  .two {
+    margin: 0;
+    padding: 0 calc($paddingMain * 1.5);
+
+    img {
+      height: 100%;
+    }
+  }
+}
+
+@include lg {
+  .container {
+    @include flex("col");
+    padding-bottom: calc(1.75 * $paddingMain);
+    align-items: flex-start;
+  }
+
+  .one {
+    order: 2;
+    align-items: flex-start;
+    position: relative;
+    margin: 0 1.5vw;
+    text-align: left;
+    padding-left: 0;
+
+    .headline {
+      @include flex("col");
+      align-items: flex-start;
+      padding: 0 calc($paddingMain * 1.5);
+      transform: translateY(-9.25vw);
+
+      .name {
+        color: white;
+        margin-bottom: 1vw;
+      }
+
+      h1 {
+        margin: $padding30 0;
+        @include capsbold(calc($text70 - 0.525vw));
+      }
+
+      .info {
+        padding: 0;
+        transform: translateY(0);
+      }
+    }
+
+    .cta {
+      transform: translateY(-10vw);
+      padding: 0 calc($paddingMain * 1.5);
+    }
+  }
+
+  .two {
+    margin: 0;
+    padding: 0 calc($paddingMain * 1.5);
+
+    img {
+      height: 100%;
+    }
+  }
+}
+
+@include md {
+  .container {
+    padding-bottom: calc(1.75 * $paddingMain);
+    align-items: flex-start;
+  }
+
+  .one {
+    margin: 0 1.5vw;
+
+    .headline {
+      padding: 0;
+
+      h1 {
+        margin: $padding20 0;
+        @include capsbold(calc($text50 + 2vw));
+      }
+    }
+
+    .cta {
+      padding: 0;
+    }
+  }
+
+  .two {
+    padding: 0;
+
+    img {
+      padding-top: $padding50;
+    }
+  }
+}
+
+@include sm {
+  .container {
+    height: auto;
+    padding-bottom: 0;
+  }
+
+  .one {
+    margin: 0;
+    transform: translateY(10vw);
+
+    .headline {
+      h1 {
+        @include capsbold($text50);
+      }
+
+      .name {
+        color: $colorMain;
+        margin: $padding25 0 0;
+      }
+    }
+  }
+
+  .two {
+    img {
+      padding-top: $padding50;
+    }
+  }
 }

@@ -22,17 +22,21 @@ const About = () => {
             </p>
           </div>
           <div className="cta">
-            {/* <a href="#">Resume</a> */}
+            <a href="#">Resume</a>
             <a href="https://devpost.com/weinymarchelina">Devpost</a>
           </div>
         </div>
         <div className={styles.two}>
-          <Image
-            src="/about-img.JPG"
+          <img
+            src="https://res.cloudinary.com/tigervision/image/upload/v1641480385/portfolio/personal/Landing_zk667g.jpg"
+            alt="about-image"
+          />
+          {/* <Image
+            src="https://res.cloudinary.com/tigervision/image/upload/v1641480385/portfolio/personal/Landing_zk667g.jpg"
             alt="hero-image"
             layout="fill"
             objectFit="cover"
-          />
+          /> */}
         </div>
       </div>
     </section>
