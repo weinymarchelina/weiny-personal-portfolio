@@ -17,9 +17,100 @@
   @include flex("even");
   @include capsbold($text16);
   letter-spacing: $letter10;
-  // width: 75%;
 
   li + li {
     margin-left: $padding50;
+  }
+}
+
+.mobile {
+  width: $padding50;
+  @include flex("col");
+  align-items: flex-start;
+  background-color: transparent;
+  z-index: 5;
+  display: none;
+  border: none;
+
+  &:hover {
+    background-color: transparent;
+  }
+
+  div {
+    @include flex("");
+    @include capsbold(calc(0.1vw + 0.075rem));
+    background-color: $colorMain;
+    width: 100%;
+    height: calc(0.075rem + 0.15vw);
+    transition: all 250ms ease;
+  }
+
+  div + div {
+    margin-top: calc($padding10 / 1.5);
+  }
+}
+
+@include xl {
+  .navLinks {
+    li + li {
+      margin-left: $padding35;
+    }
+  }
+}
+
+@include lg {
+  .navLinks {
+    position: absolute;
+    @include flex("col");
+    @include capsbold($text30);
+    align-items: flex-end;
+    text-align: right;
+    justify-content: flex-start;
+    padding: calc($paddingMain * 2) $paddingMain $paddingMain;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    background-color: $colorBg;
+    display: none;
+    transition: 250ms ease;
+
+    li + li {
+      margin: $padding30 0 0;
+    }
+  }
+
+  .show {
+    display: block;
+  }
+
+  .cross {
+    div {
+      width: 100%;
+    }
+
+    div:nth-child(1) {
+      transform: rotate(45deg)
+        translate(calc($padding10 / 2), calc($padding10 / 1.5));
+    }
+
+    div:nth-child(2) {
+      transform: translateX(-1vw);
+      opacity: 0;
+    }
+
+    div:nth-child(3) {
+      transform: rotate(-45deg)
+        translate(calc($padding10 / 2), calc(-0.35rem - 0.25vw / 1.5));
+    }
+  }
+
+  .mobile {
+    display: block;
+  }
+}
+
+@include md {
+  .mobile {
+    width: $padding50;
   }
 }

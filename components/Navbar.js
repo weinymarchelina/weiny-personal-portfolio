@@ -1,16 +1,28 @@
 import Link from "next/link";
+import { useState } from "react";
 import styles from "../styles/Navbar.module.scss";
-import Image from "next/image";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
   return (
     <nav className={styles.navContainer}>
       <div className={styles.navLogo}>
-        {/* <a href="#">WeinyM</a> */}
         <Link href="/">WeinyM</Link>
-        {/* <Image src="/icon.png" width={75} height={75} /> */}
       </div>
-      <div className={styles.navLinks}>
+
+      <button
+        className={`${styles.mobile} ${open ? styles.cross : ""}`}
+        onClick={() => {
+          setOpen(!open);
+        }}
+      >
+        <div></div>
+        <div></div>
+        <div></div>
+      </button>
+
+      <ul className={`${styles.navLinks} ${open ? styles.show : ""}`}>
         <li>
           <Link href="/#hero">Home</Link>
         </li>
@@ -32,7 +44,8 @@ const Navbar = () => {
         <li>
           <Link href="/#contact">Contact</Link>
         </li>
-      </div>
+      </ul>
+
       {/* <div className="nav-option">
         <a href="#">Language</a>
       </div> */}

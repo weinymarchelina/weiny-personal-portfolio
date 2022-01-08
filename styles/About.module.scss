@@ -119,6 +119,7 @@ section .container {
 @include md {
   section .container {
     background-color: transparent;
+    box-shadow: none;
     padding: 0;
     .one {
       margin-top: $padding35;
@@ -126,7 +127,7 @@ section .container {
 
       .text {
         h2 {
-          @include capsbold($padding50);
+          @include capsbold($text60);
           margin-bottom: $padding30;
         }
       }

@@ -88,7 +88,6 @@ const Projects = ({ project, allProjects }) => {
   const nextProject2 = allProjects[getIndex(2)];
 
   const date = new Date(details.date);
-  console.log(date);
 
   return (
     <section>
@@ -100,9 +99,9 @@ const Projects = ({ project, allProjects }) => {
             <p>{details.subtitle}</p>
           </div>
           <div className={Styles.cta}>
-            <p>{`${date.getFullYear()}/${
+            <p>{`${date.getDate()}/${
               date.getMonth() + 1
-            }/${date.getDate()}`}</p>
+            }/${date.getFullYear()}`}</p>
             <div>
               <a href={details.repo}>Repository</a>
               <a href={details.live}>Visit Website</a>
@@ -196,10 +195,7 @@ const Projects = ({ project, allProjects }) => {
                 </div>
                 <div className={Styles.containInfo}>
                   <p>{nextProject.fields.title}</p>
-                  <p>
-                    Aenean luctus, lacus a eleifend mollis, nisl quam porta ex,
-                    nec elementum arcu lectus aliquam metus.
-                  </p>
+                  <p>{nextProject.fields.subtitle}</p>
                 </div>
               </li>
               <li>
@@ -216,10 +212,7 @@ const Projects = ({ project, allProjects }) => {
                 </div>
                 <div className={Styles.containInfo}>
                   <p>{nextProject2.fields.title}</p>
-                  <p>
-                    Aenean luctus, lacus a eleifend mollis, nisl quam porta ex,
-                    nec elementum arcu lectus aliquam metus.
-                  </p>
+                  <p>{nextProject2.fields.subtitle}</p>
                 </div>
               </li>
             </ul>

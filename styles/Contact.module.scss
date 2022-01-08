@@ -17,6 +17,7 @@
       @include flex("");
       justify-content: space-between;
       width: 100%;
+      padding-left: $padding25;
 
       a {
         @include flex("even");
@@ -35,18 +36,108 @@
   }
 }
 
+@include xxl {
+  .container {
+    padding: $padding50 0;
+
+    ul {
+      li {
+        width: 100%;
+
+        a {
+          @include flex("even");
+          @include link(calc($text20 - 0.2vw), $padding10);
+          text-transform: uppercase;
+          letter-spacing: $letter10;
+          padding: $padding10;
+          width: 100%;
+          text-align: center;
+
+          p:nth-child(2) {
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+}
+
 @include xl {
   .container {
     @include flex("col");
     align-items: flex-start;
     h2 {
-      @include capsbold($text50);
-      // margin-bottom: $padding10;
-      // letter-spacing: $letter5;
-      // flex: 1;
+      @include capsbold($text82);
+      margin-bottom: $padding20;
     }
 
     ul {
+      width: 100%;
+      li {
+        padding: 0;
+
+        a {
+          @include link($text25, $padding20);
+          margin-bottom: $padding25;
+        }
+      }
+    }
+  }
+}
+
+@include lg {
+  .container {
+    ul {
+      li {
+        a {
+          @include link(calc($text25 - 0.1vw), $padding20);
+        }
+      }
+    }
+  }
+}
+
+@include md {
+  .container {
+    ul {
+      li {
+        justify-content: space-between;
+
+        a {
+          @include flex("col");
+          font-size: $text25;
+          padding-bottom: $padding10;
+          border-bottom: solid calc(0.05rem + 0.01vw) black;
+
+          align-items: flex-start;
+
+          p:nth-child(1) {
+            margin-bottom: $padding25;
+          }
+
+          p:nth-child(2) {
+            font-size: $text22;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include xs {
+  .container {
+    h2 {
+      @include capsbold($text50);
+    }
+
+    ul {
+      li {
+        a {
+          p:nth-child(2) {
+            font-size: calc($text16 - 0.75vw);
+          }
+        }
+      }
     }
   }
 }

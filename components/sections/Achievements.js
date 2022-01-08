@@ -30,7 +30,7 @@ const Achievement = () => {
               href="https://drive.google.com/file/d/1FN6Txl25F8D3OS6LvlFjub-E2MAQOjKo/view?usp=sharing"
               target="blank"
             >
-              Events
+              Event
             </a>
           </li>
           <li className="display-card">
