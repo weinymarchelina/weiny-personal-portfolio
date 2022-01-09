@@ -19,6 +19,7 @@
   @include flex("even");
   width: 100%;
   align-items: stretch;
+  @include slideBtm(1s);
 
   .headline {
     flex: 2;
@@ -71,6 +72,7 @@
   @include flex("even");
   width: 100%;
   align-items: flex-start;
+  @include slideBtm(1s);
 
   h3 {
     font-size: $text30;
@@ -135,6 +137,7 @@
     border-radius: $padding10;
     flex: 3;
     width: 100%;
+    @include slideBtm(1s);
 
     img {
       display: block;
@@ -395,9 +398,13 @@
         margin-left: 0;
       }
 
-      a + a {
-        margin-left: $padding25;
+      a:nth-child(1) {
+        margin-right: $padding80;
       }
+
+      // a + a {
+      //   margin-left: $padding25;
+      // }
     }
   }
 
@@ -551,16 +558,23 @@
 
       div {
         justify-content: flex-start;
-        grid-gap: $padding10 $padding25;
+        margin-bottom: $padding30;
+        // gap: $padding10 $padding25;
       }
 
-      a + a {
-        margin-left: 0;
-      }
+      // @supports (gap: $padding10 $padding25) {
+      //   div {
+      //     gap: $padding10 $padding25;
+      //   }
+      // }
 
-      p {
-        margin-top: $padding30;
-      }
+      // a:nth-child(1) {
+      //   margin-right: 0;
+      // }
+
+      // p {
+      //   margin-top: $padding30;
+      // }
     }
   }
 
@@ -593,6 +607,11 @@
     .project {
       ul {
         li {
+          .containImg {
+            button {
+              padding: $padding15;
+            }
+          }
           .containInfo {
             p {
               font-size: $text22;

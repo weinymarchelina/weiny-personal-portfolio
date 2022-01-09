@@ -19,6 +19,17 @@
       width: 100%;
       padding-left: $padding25;
 
+      // &:nth-child(1) {
+      //   a {
+      //     cursor: context-menu;
+
+      //     &:hover {
+      //       padding-bottom: $padding10;
+      //       // color: $co;
+      //     }
+      //   }
+      // }
+
       a {
         @include flex("even");
         @include link($text20, $padding10);

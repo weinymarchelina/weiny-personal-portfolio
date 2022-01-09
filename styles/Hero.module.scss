@@ -12,6 +12,7 @@
   margin-right: calc($paddingMain / 2.5);
   flex: 1;
   align-items: flex-start;
+  @include slideBtm(1s);
 }
 
 .headline {
@@ -33,6 +34,7 @@
     text-transform: uppercase;
     margin-bottom: $padding30;
     letter-spacing: $letter20;
+    @include slideBtm(0.75s);
   }
 
   .info {
@@ -61,6 +63,13 @@
         border: calc(1px + 0.1vw) solid $colorMain;
       }
     }
+
+    &:nth-child(2) {
+      a:hover {
+        color: white;
+        -webkit-text-stroke: 0;
+      }
+    }
   }
 
   button + button {
@@ -71,6 +80,7 @@
 .two {
   flex: 1;
   margin-left: calc($paddingMain / 2.5);
+  @include slideBtm(1s);
 }
 
 @include xxl {

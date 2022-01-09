@@ -39,7 +39,8 @@
         &:hover {
           border: $padding10 solid rgb(100, 100, 100);
           background-color: rgba(205, 205, 205, 0.521);
-          opacity: 0.5;
+          opacity: 0.75;
+          color: $colorMain;
         }
       }
     }

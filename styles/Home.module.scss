@@ -6,29 +6,29 @@
   box-shadow: $shadowMain;
 }
 
-.bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: $padding50;
-  //   height: 100vh;
-  //   position: sticky;
+// .bar {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: $padding50;
+//   //   height: 100vh;
+//   //   position: sticky;
 
-  button {
-    height: $padding30;
-    width: $padding30;
-    background-color: #cccccc;
-    transition: 250ms ease;
+//   button {
+//     height: $padding30;
+//     width: $padding30;
+//     background-color: #cccccc;
+//     transition: 250ms ease;
 
-    &:hover {
-      width: $padding50;
-    }
-  }
+//     &:hover {
+//       width: $padding50;
+//     }
+//   }
 
-  div + div {
-    margin-top: $padding35;
-  }
-}
+//   div + div {
+//     margin-top: $padding35;
+//   }
+// }
 
 .mainTitle {
   @include capsbold($text82);
@@ -151,8 +151,15 @@
         width: 100%;
         flex-wrap: wrap;
         // gap: $padding30 $padding80;
-        grid-gap: $padding30 $padding80;
         justify-content: flex-start;
+
+        li {
+          margin-bottom: $padding30;
+          width: auto;
+        }
+        // li + li {
+        //   margin-left: $padding80;
+        // }
 
         li {
           @include flex("col");
@@ -165,6 +172,17 @@
 
           p {
             font-size: $text22;
+          }
+        }
+      }
+
+      @supports (gap: $padding30 $padding80) {
+        ul {
+          gap: $padding30 $padding80;
+
+          li {
+            width: auto;
+            margin-bottom: 0;
           }
         }
       }

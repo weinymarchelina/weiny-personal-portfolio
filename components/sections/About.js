@@ -9,21 +9,29 @@ const About = () => {
           <div className={styles.text}>
             <h2>About Me</h2>
             <p>
-              Starting from web design, my passion the web development industry
-              motivates me to continuously learn and explore. My self-learning
-              journey will continue combining websites with augmented reality,
-              bringing an extraordinary experience.
+              Starting from web design, my passion for the web development
+              industry motivates me to learn and code. With my abilities in
+              building MERN applications, mainly using Next.js, I created
+              exciting projects while providing solutions to different problems.
               <br />
               <br />
-              Other than working on personal projects, I am also pushing myself
-              to competing online hackathons.
-              {/* Feel free to check out and contact me
-              in Devpost. */}
+              My self-learning journey will continue by combining websites with
+              augmented and virtual reality, bringing an extraordinary user
+              experience. Besides working on projects, I am also pushing myself
+              to compete in online hackathons.
             </p>
           </div>
           <div className="cta">
-            <a href="#">Resume</a>
-            <a href="https://devpost.com/weinymarchelina">Devpost</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              Resume
+            </a>
+            <a
+              href="https://devpost.com/weinymarchelina"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Devpost
+            </a>
           </div>
         </div>
         <div className={styles.two}>

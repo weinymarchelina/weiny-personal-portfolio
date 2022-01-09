@@ -24,6 +24,11 @@ const Hero = () => {
           </div>
         </div>
         <div className={styles.two}>
+          {/* <div className={styles.design}>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div> */}
           <img
             src="https://res.cloudinary.com/tigervision/image/upload/v1641480386/portfolio/personal/About_e0rmcl.jpg"
             alt="hero-image"

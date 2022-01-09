@@ -1,5 +1,6 @@
 import { createClient } from "contentful";
 import Image from "next/image";
+import Head from "next/head";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import Skeleton from "../../components/Skeleton";
@@ -91,6 +92,14 @@ const Projects = ({ project, allProjects }) => {
 
   return (
     <section>
+      <Head>
+        <title>Weiny - Web Developer Portfolio</title>
+        <meta
+          name="description"
+          content="Portfolio website of Weiny Marchelina"
+        />
+        <link rel="icon" href="/logo.png" />
+      </Head>
       <div className={`container inner ${Styles.container}`}>
         <div className={Styles.one}>
           {/* <h1>Project Details</h1> */}
@@ -103,8 +112,18 @@ const Projects = ({ project, allProjects }) => {
               date.getMonth() + 1
             }/${date.getFullYear()}`}</p>
             <div>
-              <a href={details.repo}>Repository</a>
-              <a href={details.live}>Visit Website</a>
+              <a href={details.repo} target="_blank" rel="noopener noreferrer">
+                Repository
+              </a>
+              {details.live && (
+                <a
+                  href={details.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visit Website
+                </a>
+              )}
             </div>
           </div>
         </div>

@@ -4,8 +4,26 @@
 html,
 body {
   font-family: "Roboto", sans-serif;
-  // background-color: #00539c;
+  scroll-behavior: smooth;
+  // cursor: none;
 }
+
+// .cursor {
+//   width: $padding50;
+//   height: $padding50;
+//   border: $letter10 solid $colorMain;
+//   border-radius: 100%;
+//   position: fixed;
+//   transform: translate(-50%, -50%);
+//   pointer-events: none;
+//   z-index: 9999;
+//   mix-blend-mode: difference;
+//   transition: opacity all 150ms ease;
+// }
+
+// .cursor--hidden {
+//   opacity: 0;
+// }
 
 body::before {
   content: "";
@@ -26,6 +44,16 @@ body::before {
   position: relative;
 }
 
+a {
+  transition: 250ms ease;
+  cursor: pointer;
+
+  &:hover {
+    color: transparent;
+    -webkit-text-stroke: 1px $colorMain;
+  }
+}
+
 button {
   cursor: pointer;
   border: none;
@@ -36,6 +64,11 @@ button {
   &:hover {
     background-color: $colorTwo;
     color: white;
+  }
+
+  a:hover {
+    color: $colorMain;
+    -webkit-text-stroke: 0;
   }
 }
 

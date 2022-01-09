@@ -9,6 +9,7 @@ const Navbar = () => {
     <nav className={styles.navContainer}>
       <div className={styles.navLogo}>
         <Link href="/">WeinyM</Link>
+        {/* <img src="/logo.svg" alt="" /> */}
       </div>
 
       <button
