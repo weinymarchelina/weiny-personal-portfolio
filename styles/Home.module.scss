@@ -74,11 +74,10 @@
         .cta {
           a {
             @include link($text20, $padding10);
+            margin-right: $padding50;
+            margin-bottom: $padding15;
           }
 
-          a + a {
-            margin-left: $padding50;
-          }
           margin-bottom: $padding80;
         }
       }
@@ -124,6 +123,8 @@
 }
 
 .skillContainer {
+  padding-right: calc($paddingMain - $padding80);
+
   h2 {
     @include capsbold(calc($text82));
     letter-spacing: $letter5;
@@ -137,6 +138,7 @@
     .category {
       @include flex("col");
       align-items: flex-start;
+      width: 100%;
 
       h3 {
         font-weight: 500;
@@ -150,16 +152,11 @@
         @include flex("even");
         width: 100%;
         flex-wrap: wrap;
-        // gap: $padding30 $padding80;
         justify-content: flex-start;
 
         li {
-          margin-bottom: $padding30;
-          width: auto;
+          margin: 0 $padding80 $padding30 0;
         }
-        // li + li {
-        //   margin-left: $padding80;
-        // }
 
         li {
           @include flex("col");
@@ -176,16 +173,16 @@
         }
       }
 
-      @supports (gap: $padding30 $padding80) {
-        ul {
-          gap: $padding30 $padding80;
+      // @supports (gap: $padding30 $padding80) {
+      //   ul {
+      //     gap: $padding30 $padding80;
 
-          li {
-            width: auto;
-            margin-bottom: 0;
-          }
-        }
-      }
+      //     li {
+      //       width: auto;
+      //       margin-bottom: 0;
+      //     }
+      //   }
+      // }
     }
 
     .category + .category {
@@ -227,11 +224,14 @@
           }
 
           .cta {
+            @include flex("");
+            justify-content: flex-start;
+            flex-wrap: wrap;
             a {
               @include link($text22, $padding10);
             }
 
-            margin-bottom: $padding80;
+            margin-bottom: $padding30;
           }
         }
 
@@ -314,7 +314,7 @@
   }
 
   .pages {
-    padding: 0;
+    padding: $paddingSecond 0;
     margin: 0;
     background-color: transparent;
 
