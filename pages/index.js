@@ -136,10 +136,22 @@ export default function Home({ projects, skills }) {
             <h2>Skills</h2>
             <div className={styles.show}>
               <div className={styles.category}>
-                <h3>Frontend</h3>
+                <h3>Languages</h3>
                 <ul className="front">
                   {skills.map((skill) => {
-                    if (skill.fields.category === "Front") {
+                    // if (skill.fields.category === "Front") {
+                    //   return (
+                    //     <li key={skill.fields.name}>
+                    //       <img
+                    //         src={`/svg/${skill.fields.name.toLowerCase()}.svg`}
+                    //         alt={`${skill.fields.title} logo`}
+                    //       />
+
+                    //       <p>{skill.fields.name}</p>
+                    //     </li>
+                    //   );
+                    // }
+                    if (skill.fields.type === "Language") {
                       return (
                         <li key={skill.fields.name}>
                           <img
@@ -156,10 +168,22 @@ export default function Home({ projects, skills }) {
               </div>
 
               <div className={styles.category}>
-                <h3>Backend</h3>
+                <h3>Technologies</h3>
                 <ul className="back">
                   {skills.map((skill) => {
-                    if (skill.fields.category === "Back") {
+                    // if (skill.fields.category === "Back") {
+                    //   return (
+                    //     <li key={skill.fields.name}>
+                    //       <img
+                    //         src={`/svg/${skill.fields.name.toLowerCase()}.svg`}
+                    //         alt={`${skill.fields.title} logo`}
+                    //       />
+
+                    //       <p>{skill.fields.name}</p>
+                    //     </li>
+                    //   );
+                    // }
+                    if (skill.fields.type === "Technology") {
                       return (
                         <li key={skill.fields.name}>
                           <img

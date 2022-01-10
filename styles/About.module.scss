@@ -27,6 +27,7 @@ section .container {
 
     a {
       @include link($text20, $padding10);
+      display: none;
     }
 
     a + a {
