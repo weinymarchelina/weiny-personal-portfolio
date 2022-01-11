@@ -4,6 +4,15 @@
   position: relative;
   border-radius: 0 0 1vw 1vw;
   box-shadow: $shadowMain;
+
+  .more {
+    @include flex("");
+    padding: $padding50 $paddingMain;
+    background-color: $colorBg;
+    border-top: $letter7 solid $colorTwo;
+    @include capsbold($text30);
+    letter-spacing: $letter7;
+  }
 }
 
 // .bar {
@@ -199,7 +208,7 @@
 
   .pages {
     @include flex("even");
-    height: auto;
+    min-height: auto;
     padding-top: 0;
 
     .setContainer {
@@ -296,6 +305,14 @@
 @include md {
   .mainContainer {
     box-shadow: none;
+
+    .more {
+      @include flex("");
+      padding: $padding50 $paddingMain;
+      background-color: transparent;
+      border-top: $letter5 solid $colorTwo;
+      @include capsbold($text25);
+    }
   }
 
   .mainTitle {
@@ -381,6 +398,13 @@
 }
 
 @include sm {
+  .mainContainer {
+    .more {
+      padding: $padding50 $paddingMain;
+      @include capsbold(calc($text22 + 0.1rem));
+    }
+  }
+
   .pages {
     margin: 0 0 $padding20;
 
@@ -401,7 +425,6 @@
   }
 
   .pages + .pages {
-    padding: 0;
     margin: 0 0 $padding50;
   }
 }

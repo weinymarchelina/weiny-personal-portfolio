@@ -126,6 +126,16 @@ export default function Home({ projects, skills }) {
                   </div>
                 </div>
               ))}
+
+            <div className={styles.more}>
+              <a
+                href="https://devpost.com/weinymarchelina"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                See More Projects
+              </a>
+            </div>
           </div>
         </section>
 

@@ -165,6 +165,8 @@
 .sample {
   img {
     width: calc(100vw - calc($paddingMain * 4));
+    margin-bottom: $padding15;
+    box-shadow: $shadowMain;
   }
 }
 
