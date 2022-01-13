@@ -149,7 +149,8 @@
 .desc {
   @include flex("even");
   align-items: flex-start;
-  padding: calc($paddingMain * 2) 0;
+  padding: calc($paddingMain * 2) 0 $width75;
+
   .header {
     flex: 2;
   }
@@ -159,7 +160,18 @@
     line-height: 150%;
     letter-spacing: $letter5;
     margin-left: calc($paddingMain / 2);
+
+    li {
+      list-style-type: square;
+      font-size: $text25;
+      line-height: 150%;
+      padding-bottom: $padding15;
+    }
   }
+}
+
+.desc + .desc {
+  padding: 0 0 calc($paddingMain * 2);
 }
 
 .sample {
@@ -336,12 +348,15 @@
   .desc {
     @include flex("even");
     align-items: flex-start;
-    padding: calc($paddingMain * 2) 0;
 
     div {
       flex: 2;
       margin-left: 0;
     }
+  }
+
+  .desc + .desc {
+    padding: 0 0 calc($paddingMain * 2);
   }
 
   .sample {
@@ -355,10 +370,13 @@
   .desc {
     @include flex("col");
     align-items: flex-start;
-    padding: calc($paddingMain * 2) 0;
 
     div {
       margin-top: $padding25;
+      font-size: $text30;
+    }
+
+    li {
       font-size: $text30;
     }
   }
@@ -597,11 +615,15 @@
   }
 
   .desc {
-    padding-bottom: $paddingMain;
+    // padding-bottom: $paddingMain;
 
     div {
       font-size: calc($text22 + 0.1rem);
       margin-top: $padding10;
+
+      li {
+        font-size: calc($text22 + 0.1rem);
+      }
     }
   }
 

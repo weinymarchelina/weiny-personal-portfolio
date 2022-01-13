@@ -183,6 +183,15 @@ const Projects = ({ project, allProjects }) => {
           </div>
         </div>
 
+        {details.features && (
+          <div className={Styles.desc}>
+            <h3 className={Styles.header}>Features</h3>
+            <div>
+              <ReactMarkdown>{details.features}</ReactMarkdown>
+            </div>
+          </div>
+        )}
+
         <div className={Styles.sample}>
           {details.sampleLinks &&
             details.sampleLinks.map((link) => {
